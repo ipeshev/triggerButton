@@ -1,4 +1,5 @@
-angular.module('triggerButton',[]).directive('triggerButton',
+'use strict';
+angular.module('TriggerButton',[]).directive('triggerButton',
     function($timeout) {
         return {
             restrict: 'A',

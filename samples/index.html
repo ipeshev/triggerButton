@@ -6,10 +6,31 @@
     <title>Sample protectedButton directive</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="../bower_components/angular/angular.min.js">
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+    <script rel="stylesheet" src="../bower_components/angular/angular.min.js"></script>
+    <script src="../src/triggerButton.js"></script>
+    <script  src="index.js"></script>
 </head>
-<body>
-
+<body ng-app="SampleApp">
+    <div ng-controller="SampleCtrl">
+        <table>
+            <thead>
+            <tr>
+                <td ng-repeat="(key,value) in data[0]" ng-bind="key" align="center"></td>
+                <td>
+                    <button trigger-button ng-model="protected" class="dangerous-trigger" ng-click="somethingDangerous()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+            </tr>
+            </thead>
+            <tbody ng-class="{'shake':!protected}">
+            <tr ng-repeat="row in data">
+                <td ng-repeat="(key,value) in row" ng-bind="value" ng-align="{'center':typeof(value)=='string','left':typeof(value)!='string'}"></td>
+                <td align="center"><button class="delete" ng-click="deleteRow($index)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<button trigger-button ng-model="protected" class="dangerous-trigger" ng-click="somethingDangerous()"><i class="fa fa-trash" aria-hidden="true"></i></button>-->
+    </div>
 </body>
 </html>
