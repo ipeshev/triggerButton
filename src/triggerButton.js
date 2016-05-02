@@ -1,3 +1,4 @@
+/*globals angular:true*/
 'use strict';
 angular.module('TriggerButton',[]).directive('triggerButton',
     function($timeout) {
@@ -33,10 +34,8 @@ angular.module('TriggerButton',[]).directive('triggerButton',
                     if($scope.protected){
                         event.stopImmediatePropagation();
                         lock();
-
                     } {
                         currentTimeout = $timeout(unlock,5000);
-
                     }
                 });
                 $scope.protected = true;

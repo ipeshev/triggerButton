@@ -1,9 +1,6 @@
 button {
-
     font-size:1rem;
-
 }
-
 .dangerous-trigger,.delete {
     width:40px;
     height:30px;
@@ -17,10 +14,8 @@ button {
     color:white;
     border:none;
 }
-
 table thead td+td{
     border-left: 1px solid black;
-
 }
 table thead td {
     border-bottom: 1px solid black;
@@ -31,7 +26,6 @@ table {
     border-spacing: 0;
 }
 table td {
-
     margin:0;
     padding:5px;
 }
@@ -39,7 +33,7 @@ table td {
     background:orange;
 }
 .shake>*{
-    -webkit-animation-name: spaceboots;
+    -webkit-animation-name: shakers;
     -webkit-animation-duration: 0.8s;
     -webkit-transform-origin:20% 20%;
     -webkit-animation-iteration-count: infinite;
@@ -56,7 +50,7 @@ table td {
 }
 
 
-@-webkit-keyframes spaceboots {
+@-webkit-keyframes shakers {
     0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
     10% { -webkit-transform: translate(-1px, -2px) rotate(-0.1deg); }
     20% { -webkit-transform: translate(-1px, 0px) rotate(0.1deg); }

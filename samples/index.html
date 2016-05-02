@@ -17,20 +17,19 @@
         <table>
             <thead>
             <tr>
-                <td ng-repeat="(key,value) in data[0]" ng-bind="key" align="center"></td>
+                <td data-ng-repeat="(key,value) in data[0]" data-ng-bind="(key|uppercase)" align="center"></td>
                 <td>
-                    <button trigger-button ng-model="protected" class="dangerous-trigger" ng-click="somethingDangerous()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button trigger-button data-ng-model="protected" class="dangerous-trigger" data-ng-click="somethingDangerous()"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </td>
             </tr>
             </thead>
-            <tbody ng-class="{'shake':!protected}">
-            <tr ng-repeat="row in data">
-                <td ng-repeat="(key,value) in row" ng-bind="value" ng-align="{'center':typeof(value)=='string','left':typeof(value)!='string'}"></td>
-                <td align="center"><button class="delete" ng-click="deleteRow($index)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            <tbody data-ng-class="{'shake': !protected}">
+            <tr data-ng-repeat="row in data">
+                <td data-ng-repeat="(key, value) in row" data-ng-bind="value" data-ng-align="{'center':typeof(value)=='string','left':typeof(value)!='string'}"></td>
+                <td align="center"><button class="delete" data-ng-click="deleteRow($index)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
             </tr>
             </tbody>
         </table>
-        <!--<button trigger-button ng-model="protected" class="dangerous-trigger" ng-click="somethingDangerous()"><i class="fa fa-trash" aria-hidden="true"></i></button>-->
     </div>
 </body>
 </html>
