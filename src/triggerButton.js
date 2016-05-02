@@ -13,29 +13,30 @@ angular.module('TriggerButton',[]).directive('triggerButton',
                     $timeout.cancel(currentTimeout);
                     controller && controller.$setViewValue(val);
                 }
-                function unlock(){
+                function lock(){
                     $scope.protected = true;
                     element.removeClass("unlocked");
                     setViewValue($scope.protected);
 
                 }
-                function lock(){
+                function unlock(){
+
                     $scope.protected = false;
                     element.addClass('unlocked');
                     setViewValue($scope.protected);
                 }
-                element.bind('mouseleave',unlock);
+                element.bind('mouseleave',lock);
                 element.bind('keyup',function(e) {
                     if (e.keyCode === 27) { //esc
-                        unlock();
+                        lock();
                     }
                 });
                 element.bind('click',function(event){
                     if($scope.protected){
                         event.stopImmediatePropagation();
-                        lock();
+                        unlock();
                     } {
-                        currentTimeout = $timeout(unlock,5000);
+                        currentTimeout = $timeout(lock,5000);
                     }
                 });
                 $scope.protected = true;
