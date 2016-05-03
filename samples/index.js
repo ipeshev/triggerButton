@@ -3,9 +3,16 @@
  */
 /*globals angular:true */
 'use strict';
-
+/**
+ * @module SampleApp
+ * @description sample module with simple table, to show triggerButton in action
+ */
 angular.module('SampleApp', ['TriggerButton']).controller("SampleCtrl", function($scope, $filter){
 
+    /**
+     * @function somethingDangerous
+     * @description mock of rows deletion
+     */
     $scope.somethingDangerous = function(){
         if(!$scope.protected){
             alert("Opss, data gone to trash");
@@ -14,11 +21,21 @@ angular.module('SampleApp', ['TriggerButton']).controller("SampleCtrl", function
         }
     };
     $scope.protected = true;
-
+    /**
+     * @function randomDate
+     * @description Create random date within some interval
+     * @returns {Date}
+     */
     function randomDate(){
         return new Date(new Date().getTime() + Math.floor((Math.random() * 100000) - 100000));
     }
 
+    /**
+     * @description creates rows for mocked table
+     * @param a
+     * @param b
+     * @constructor Row
+     */
     function Row(a,b){
         this.name = a;
         this.value = b;
