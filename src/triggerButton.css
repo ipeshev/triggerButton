@@ -1,0 +1,25 @@
+/*Structural */
+button {
+    font-size: 1rem;
+}
+.dangerous-trigger button {
+    transition: all 0.5s  ease;
+}
+.dangerous-trigger .container {
+    display: flex;
+    width: 65px;
+    overflow: hidden;
+}
+.dangerous-trigger.unlocked button:first-child {
+    margin-left: -33px;
+}
+/*Skin*/
+.dangerous-trigger .cancel {
+    color: limegreen;
+}
+.dangerous-trigger .trigger {
+    color: orange;
+}
+.dangerous-trigger.unlocked .trigger {
+    color: red;
+}

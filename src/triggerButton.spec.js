@@ -9,6 +9,9 @@ describe("Trigger button directive",function(){
         expect(element.hasClass('unlocked')).toEqual(val);
         expect(scope.protected).toEqual(!val);
     }
+    function clickTrigger(){
+        angular.element(element.find("button")[1]).triggerHandler('click');
+    }
 
     beforeEach(module('TriggerButton'));
 
@@ -22,7 +25,8 @@ describe("Trigger button directive",function(){
         };
 
         spyOn(scope, 'launchRockets');
-        element = angular.element('<button trigger-button data-ng-model="protected" data-ng-click="launchRockets()"></button>');
+
+        element = angular.element('<button trigger-button data-ng-model="protected" action="launchRockets()"></button>');
 
         angular.element($document[0].body).append(element[0]);
         element = $compile(element)(scope);
@@ -36,31 +40,25 @@ describe("Trigger button directive",function(){
     });
 
     it("should activate on first click", function(){
-        element.triggerHandler('click');
+        clickTrigger();
         isUnlocked(true);
     });
 
     it("should deactivate on esc", function(){
-        element.triggerHandler('click');
-        element.triggerHandler({type:'keyup',keyCode:27});
-        isUnlocked(false);
-    });
-
-    it("should deactivate on mouseleave", function(){
-        element.triggerHandler('click');
-        element.triggerHandler('mouseleave');
+        clickTrigger();
+        document.triggerHandler({type:'keyup',keyCode:27});
         isUnlocked(false);
     });
 
     it("should deactivate after 5 seconds", function(){
-        element.triggerHandler('click');
+        clickTrigger();
         timeout.flush(5000);
         isUnlocked(false);
     });
 
     it("should trigger functionality on second click", function(){
-        element.triggerHandler('click');
-        element.triggerHandler('click');
+        clickTrigger();
+        clickTrigger();
         expect(scope.launchRockets).toHaveBeenCalled()
     });
 });

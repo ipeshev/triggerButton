@@ -6,15 +6,22 @@
  * @params ngModel - protected state : true - locked, false - unlocked
  */
 angular.module('TriggerButton',[]).directive('triggerButton',
-    function($timeout) {
+    function($timeout, $document) {
         return {
-            restrict: 'A',
+            restrict: 'AE',
             require: '?ngModel',
-
+            transclude: true,
+            template:"<div class='container' style=''>" +
+            "<button ng-click='lock()' class='fa fa-ban cancel' ></button>" +
+            "<button ng-click='clicked($event)' ng-transclude class='trigger'>" +
+            "</button><button ng-click='lock()' class='fa fa-ban cancel'></button>" +
+            "</div>",
+            scope:{
+                action:'&'
+            },
             link: function($scope, element, attrs, controller) {
                 element.addClass("trigger-button");
                 var currentTimeout;
-
                 /**
                  * @function setViewValue ( private )
                  * @description sets view value in case of ngModel provided
@@ -40,27 +47,34 @@ angular.module('TriggerButton',[]).directive('triggerButton',
                  * @description Unlocks the button
                  */
                 function unlock(){
-
                     $scope.protected = false;
                     element.addClass('unlocked');
                     setViewValue($scope.protected);
                 }
 
-                element.bind('mouseleave',lock);
-                element.bind('keyup',function(e) {
+                //
+                //
+                $document.bind('keyup',function(e) {
                     if (e.keyCode === 27) { //esc
                         lock();
                     }
                 });
 
-                element.bind('click',function(event){
+                $scope.lock = lock;
+                /**
+                 * @function clicked
+                 * @description on click of the trigger
+                 * @param event
+                 */
+                $scope.clicked = function(event){
                     if($scope.protected){
                         event.stopImmediatePropagation();
                         unlock();
-                    } {
-                        currentTimeout = $timeout(lock,5000);
+                    } else {
+                        $scope.action(event);
                     }
-                });
+                    currentTimeout = $timeout(lock,5000);
+                };
 
                 $scope.protected = true;
             }
