@@ -1,34 +1,9 @@
-button {
-    font-size:1rem;
-}
-.dangerous-trigger,.delete {
-    width:40px;
-    height:30px;
-    border-radius:3px;
-    background:white;
-    color:orange;
-    border:none;
-}
-.dangerous-trigger.unlocked {
-    background:orange;
-    color:white;
-    border:none;
-}
-table thead td+td{
-    border-left: 1px solid black;
-}
-table thead td {
-    border-bottom: 1px solid black;
-}
-table {
-    border:1px solid black;
-    border-collapse: separate;
-    border-spacing: 0;
-}
-table td {
-    margin:0;
-    padding:5px;
-}
+
+
+
+
+
+/*Shaking of the rows */
 .shake tr {
     background:orange;
 }
@@ -62,4 +37,20 @@ table td {
     80% { -webkit-transform: translate(-1px, -1px) rotate(0.1deg); }
     90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
     100% { -webkit-transform: translate(1px, -2px) rotate(-0.1deg); }
+}
+
+table thead td+td{
+    border-left: 1px solid black;
+}
+table thead td {
+    border-bottom: 1px solid black;
+}
+table {
+    border:1px solid black;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+table td {
+    margin:0;
+    padding:5px;
 }
