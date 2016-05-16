@@ -10,7 +10,7 @@ describe("Trigger button directive",function(){
         expect(scope.protected).toEqual(!val);
     }
 
-    beforeEach(module('TriggerButton'));
+    beforeEach(module('angularTriggerButton'));
 
     beforeEach(inject(function ($rootScope, $compile, $document, $timeout) {
         scope = $rootScope.$new();

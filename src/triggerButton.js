@@ -5,7 +5,7 @@
  * @description two states button that makes modal dialog obsolete
  * @params ngModel - protected state : true - locked, false - unlocked
  */
-angular.module('TriggerButton',[]).directive('triggerButton',
+angular.module('angularTriggerButton',[]).directive('triggerButton',
     function($timeout) {
         return {
             restrict: 'A',
