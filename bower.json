@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": false,
   "main":"./src/triggerButton.js",
-  "ignore": [],
+  "ignore": ["**/*.spec.js"],
   "dependencies": {
     "angular": "^1.4.0",
     "angular-mocks": "^1.4.0"
