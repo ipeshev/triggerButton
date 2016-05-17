@@ -1,7 +1,8 @@
 /*Structural */
 .trigger-button button {
-    font-size: 1rem;
+    font-size: 15px;
     margin:0;
+    padding: 2px 8px;
 }
 .trigger-button button {
     transition: all 0.5s  ease;
