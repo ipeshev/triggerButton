@@ -5,6 +5,8 @@
   "homepage": "https://github.com/ipeshev/triggerButton.git",
   "license": "MIT",
   "private": false,
+  "main":"./src/triggerButton.js",
+  "ignore": [],
   "dependencies": {
     "angular": "^1.4.0",
     "angular-mocks": "^1.4.0"
