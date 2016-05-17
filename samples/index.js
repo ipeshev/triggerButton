@@ -7,7 +7,7 @@
  * @module SampleApp
  * @description sample module with simple table, to show triggerButton in action
  */
-angular.module('SampleApp', ['AngularTriggerButton']).controller("SampleCtrl", function($scope, $filter){
+angular.module('SampleApp', ['angularTriggerButton']).controller("SampleCtrl", function($scope, $filter){
 
     /**
      * @function somethingDangerous

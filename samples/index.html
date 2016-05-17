@@ -7,6 +7,7 @@
     <meta name="description" content="triggerButton directive in action">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="../src/triggerButton.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
     <script rel="stylesheet" src="../bower_components/angular/angular.min.js"></script>
     <script src="../src/triggerButton.js"></script>
@@ -19,6 +20,7 @@
             <tr>
                 <td data-ng-repeat="(key,value) in data[0]" data-ng-bind="(key|uppercase)" align="center"></td>
                 <td>
+                    <!--triggerButton invocation-->
                     <trigger-button data-ng-model="protected" class="dangerous-trigger" data-action="somethingDangerous()">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </trigger-button>
@@ -26,13 +28,19 @@
                 </td>
             </tr>
             </thead>
-            <tbody data-ng-class="{'shake': !protected}">
+            <tbody data-ng-class="{'shake': !protected&&shake,'unprotected':!protected }">
             <tr data-ng-repeat="row in data">
                 <td data-ng-repeat="(key, value) in row" data-ng-bind="value" data-ng-align="{'center':typeof(value)=='string','left':typeof(value)!='string'}"></td>
                 <td align="center"><button class="delete" data-ng-click="deleteRow($index)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
             </tr>
             </tbody>
         </table>
+        <div>
+            <label ng-if="protected">Click the trash button</label>
+            <label ng-if="!protected">Click "cancel", or press esc, or wait 5 second to deactivate</label><br/>
+            <label>Shake those</label><input id="shake-switch" type="checkbox" ng-model="shake"/>
+        </div>
+
     </div>
 </body>
 </html>
