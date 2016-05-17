@@ -9,3 +9,5 @@ Available via Bower
 ```bash
       bower install angular-trigger-button
 ```
+
+Only master branch for now. 
