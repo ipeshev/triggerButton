@@ -1,11 +1,12 @@
 /*Structural */
-trigger-button button {
+.trigger-button button {
     font-size: 1rem;
+    margin:0;
 }
 .trigger-button button {
     transition: all 0.5s  ease;
 }
-.trigger-button .container {
+.trigger-button .trigger-container {
     display: flex;
     width: 65px;
     overflow: hidden;

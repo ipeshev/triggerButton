@@ -11,7 +11,7 @@ angular.module('angularTriggerButton',[]).directive('triggerButton',
             restrict: 'AE',
             require: '?ngModel',
             transclude: true,
-            template:"<div class='container' style=''>" +
+            template:"<div class='trigger-container' style=''>" +
             "<button ng-click='lock()' class='fa fa-ban cancel' ></button>" +
             "<button ng-click='clicked($event)' ng-transclude class='trigger'>" +
             "</button><button ng-click='lock()' class='fa fa-ban cancel'></button>" +
