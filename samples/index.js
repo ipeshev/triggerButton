@@ -27,7 +27,7 @@ angular.module('SampleApp', ['angularTriggerButton']).controller("SampleCtrl", f
      * @returns {Date}
      */
     function randomDate(){
-        return new Date(new Date().getTime() + Math.floor((Math.random() * 100000) - 100000));
+        return new Date(new Date().getTime() + Math.floor((Math.random() * 1000000000) - 1000000000));
     }
 
     /**
