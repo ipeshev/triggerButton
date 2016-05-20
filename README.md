@@ -1,6 +1,6 @@
 # Angular triggerButton directive
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.org/ipeshev/triggerButton.svg?branch=master)](https://travis-ci.org/ipeshev/triggerButton)
 
 Angular triggerButton directive, button with two states , locked and unlocked.
 
