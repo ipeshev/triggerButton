@@ -1,12 +1,14 @@
 {
   "name": "trigger-button",
   "description": "Angular triggerButton directive",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/ipeshev/triggerButton.git",
   "license": "MIT",
   "private": false,
-  "main":"./src/triggerButton.js",
-  "ignore": ["**/*.spec.js"],
+  "main": "./src/triggerButton.js",
+  "ignore": [
+    "**/*.spec.js"
+  ],
   "dependencies": {
     "angular": "^1.4.0",
     "angular-mocks": "^1.4.0"
