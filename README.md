@@ -10,4 +10,6 @@ Available via Bower
       bower install angular-trigger-button
 ```
 
+Bootstrap 3 classes are apllied on the buttons , of course everybody is free to use other css
+
 Only master branch for now. 
