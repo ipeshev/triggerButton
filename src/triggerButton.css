@@ -9,11 +9,11 @@
 }
 .trigger-button .trigger-container {
     display: flex;
-    width: 65px;
+    width: 61px;
     overflow: hidden;
 }
 .trigger-button.unlocked button:first-child {
-    margin-left: -33px;
+    margin-left: -31px;
 }
 /*Skin*/
 .trigger-button .cancel {

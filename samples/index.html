@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="main.css"/>
     <link rel="stylesheet" href="../src/triggerButton.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
     <script rel="stylesheet" src="../bower_components/angular/angular.min.js"></script>
     <script src="../src/triggerButton.js"></script>
@@ -31,7 +32,7 @@
             <tbody data-ng-class="{'shake': !protected&&shake,'unprotected':!protected }">
             <tr data-ng-repeat="row in data">
                 <td data-ng-repeat="(key, value) in row" data-ng-bind="value" data-ng-align="{'center':typeof(value)=='string','left':typeof(value)!='string'}"></td>
-                <td align="center"><button class="delete" data-ng-click="deleteRow($index)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                <td align="center"></td>
             </tr>
             </tbody>
         </table>

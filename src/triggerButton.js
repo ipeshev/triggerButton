@@ -12,9 +12,9 @@ angular.module('angularTriggerButton',[]).directive('triggerButton',
             require: '?ngModel',
             transclude: true,
             template:"<div class='trigger-container' style=''>" +
-            "<button ng-click='lock()' class='fa fa-ban cancel' ></button>" +
-            "<button ng-click='clicked($event)' ng-transclude class='trigger'>" +
-            "</button><button ng-click='lock()' class='fa fa-ban cancel'></button>" +
+            "<button ng-click='lock()' class='fa fa-ban cancel btn btn-default btn-xs' ></button>" +
+            "<button ng-click='clicked($event)' ng-transclude class='trigger btn btn-default btn-xs'>" +
+            "</button><button ng-click='lock()' class='fa fa-ban cancel btn btn-default btn-xs'></button>" +
             "</div>",
             scope:{
                 action:'&'
